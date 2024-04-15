@@ -167,14 +167,7 @@
 #    print('I like python')
 #    i += 1      # equivalent to i = i + 1
 
-### Jeśli masz problem z tłumaczeniem treści użyj https://www.deepl.com lub poproś o dodatkowe wyjaśnienie
-###### Task 8
-###### Write a program which takes 3 digits: a, b, c as input and
-###### calculate the roots of a quadratic equation ax^2 + bx + c = 0
-###### Task 9
-##### Write a program, which will find all such numbers between 1 and 1000 (both included) such
-##### that each digit of the number is an even number the numbers obtained should be printed 
-### in a comma-separated sequence on a single line.
+
 
 
 
@@ -302,3 +295,34 @@ i=1
 while(i<11):
     print(i**(1/2))
     i+=1
+
+
+
+### Jeśli masz problem z tłumaczeniem treści użyj https://www.deepl.com lub poproś o dodatkowe wyjaśnienie
+###### Task 8
+###### Write a program which takes 3 digits: a, b, c as input and
+###### calculate the roots of a quadratic equation ax^2 + bx + c = 0
+
+a = int(input('Podaj a'))
+b = int(input('Podaj b'))
+c = int(input('Podaj c'))
+
+delta = (b**2)-(4*a*c)
+if(delta>0):
+    root1 = ((-b)-(delta**(1/2)))/(2*a)
+    root2 = ((-b)+(delta**(1/2)))/(2*a)
+    print('x1= ' + str(root1) +'   x2= ' + str(root2))
+else:
+    print('Delta ujemna')
+
+
+###### Task 9
+##### Write a program, which will find all such numbers between 1 and 1000 (both included) such
+##### that each digit of the number is an even number the numbers obtained should be printed 
+### in a comma-separated sequence on a single line.
+numbers = []
+
+for i in range(1,1001):
+    if i%2 == 0:
+        numbers.append(i)
+print(numbers)   

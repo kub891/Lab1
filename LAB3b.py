@@ -138,16 +138,16 @@ Dodatkowe linki do filmów, które ułatwią Ci zrozumienie materiału z laborat
 ## wywołasz tą funkcję w tekście minimum 3 krotnie
 ######################################################################################################################
 
-# def rozprawka():
-#     print('to poprostu jest wspaniałe i niesamowite, musisz to zobaczyć')
+def rozprawka():
+    print('to poprostu jest wspaniałe i niesamowite, musisz to zobaczyć')
 
 
-# print("Zapraszamy do odwiedzenia Wielkiego Muru Chińskiego - jednego z siedmiu cudów świata!")
-# rozprawka()
-# print("Wielki Mur Chiński, to niezwykłe dzieło ludzkiej pomysłowości i wytrwałości.")
-# rozprawka()
-# print("Jego widok zapiera dech w piersiach i pozostawia niezapomniane wrażenia.")
-# rozprawka()
+print("Zapraszamy do odwiedzenia Wielkiego Muru Chińskiego - jednego z siedmiu cudów świata!")
+rozprawka()
+print("Wielki Mur Chiński, to niezwykłe dzieło ludzkiej pomysłowości i wytrwałości.")
+rozprawka()
+print("Jego widok zapiera dech w piersiach i pozostawia niezapomniane wrażenia.")
+rozprawka()
 
 ################################   Zadania do realizacji
 ## Zadanie 1
@@ -156,16 +156,16 @@ Dodatkowe linki do filmów, które ułatwią Ci zrozumienie materiału z laborat
 ## dla dowolnych dwóch argumentów wejściowych  x^x, 
 ##dla pozostałych przypadków wyświetli komunikat, że jest błąd.
 
-# def func(*args):
-#     if not args:
-#         print('Brak argumentów')
-#     elif len(args) > 2:
-#         print('Za dużo argumentów')
-#     elif len(args) == 1:
-#         return args[0] ** args[0]
-#     elif len(args) == 2:
-#         return args[0] ** args[1]
-# print(func(2,3))
+def func(*args):
+    if not args:
+        print('Brak argumentów')
+    elif len(args) > 2:
+        print('Za dużo argumentów')
+    elif len(args) == 1:
+        return args[0] ** args[0]
+    elif len(args) == 2:
+        return args[0] ** args[1]
+print(func(2,3))
 
 ######### Zadanie 2
 ## Wczytaj poniższy fragment tekstu opisujący komputer
@@ -175,43 +175,43 @@ Dodatkowe linki do filmów, które ułatwią Ci zrozumienie materiału z laborat
 ### dla innych użytkowników np. komputera, skaner, uwzględnij je w wyszukiwaniu.
 
 
-# text = 'Wczytywanie do komputera tekstów, ilustracji, fotografii, itp. jest '   \
-#        'możliwe dzięki urządzeniom zewnętrznym zwanym skanerami. Skaner to ' \
-#        'urządzenie umożliwiające wprowadzenie do komputera grafiki i tekstu. ' \
-#        'Dzięki zamianie skanowanej płaszczyzny na postać cyfrową może ona zostać ' \
-#        'wyświetlona na ekranie monitora i zapisana na dysku w odpowiednim formacie ' \
-#        'oraz może zostać poddana komputerowej obróbce. Skanery dzielimy na dwie podstawowe ' \
-#        'grupy: ręczne (np. czytniki kodów paskowych) oraz stacjonarne. Najpopularniejszym ' \
-#        'typem skanerów są skanery stacjonarne płaskie, które umożliwiają skanowanie ' \
-#        'dokumentów o formacie A3 lub A4 i ich pochodnych. Są one podłączane do ' \
-#        'komputerów przez port równoległy, uniwersalną magistralę szeregową lub sterownik SCSI.'
+text = 'Wczytywanie do komputera tekstów, ilustracji, fotografii, itp. jest '   \
+       'możliwe dzięki urządzeniom zewnętrznym zwanym skanerami. Skaner to ' \
+       'urządzenie umożliwiające wprowadzenie do komputera grafiki i tekstu. ' \
+       'Dzięki zamianie skanowanej płaszczyzny na postać cyfrową może ona zostać ' \
+       'wyświetlona na ekranie monitora i zapisana na dysku w odpowiednim formacie ' \
+       'oraz może zostać poddana komputerowej obróbce. Skanery dzielimy na dwie podstawowe ' \
+       'grupy: ręczne (np. czytniki kodów paskowych) oraz stacjonarne. Najpopularniejszym ' \
+       'typem skanerów są skanery stacjonarne płaskie, które umożliwiają skanowanie ' \
+       'dokumentów o formacie A3 lub A4 i ich pochodnych. Są one podłączane do ' \
+       'komputerów przez port równoległy, uniwersalną magistralę szeregową lub sterownik SCSI.'
 
 # print(text)
 
-# def words(word, text):
-#     print('Tekst zawiera: ' + str(text.count(word)) + 'slow ' + word)
+def words(word, text):
+    print('Tekst zawiera: ' + str(text.count(word)) + 'slow ' + word)
 
-# word = input('Podaj slowo do wyszukania: ')
-# words(word,text)
+word = input('Podaj slowo do wyszukania: ')
+words(word,text)
 ############ Zadanie 3 #################
 ## Utwórz funkcję o nazwie "SredniaLiczb.py", która wczyta N dowolnych liczb 
 ## i obliczy średnią z w/w liczb, podane przez użytkownika liczby przypisz do listy
 
 
-# numbers = []
-# while True:
-#     number = input('Podaj liczbe do sredniej (napisz ,,stop,, jesli chcesz przerwac wpisywanie): ')
-#     if(number == 'stop'):
-#         break
-#     else:
-#         numbers.append(number)
+numbers = []
+while True:
+    number = input('Podaj liczbe do sredniej (napisz ,,stop,, jesli chcesz przerwac wpisywanie): ')
+    if(number == 'stop'):
+        break
+    else:
+        numbers.append(number)
 
-# def srednialiczb(*args):
-#     result = 0
-#     for i in range(0, len(args)):
-#         result = result + int(args[i])  
-#     return result / len(args)
-# print(srednialiczb(*numbers))
+def srednialiczb(*args):
+    result = 0
+    for i in range(0, len(args)):
+        result = result + int(args[i])  
+    return result / len(args)
+print(srednialiczb(*numbers))
 
 ############ Zadanie ##################
 ## Utwórz funkcję o nazwie "ZdanieRozdziel.py", która wczyta od użytkownika pewien dowolny tekst,'
@@ -224,14 +224,14 @@ Dodatkowe linki do filmów, które ułatwią Ci zrozumienie materiału z laborat
 ## ile w każdym zdaniu jest wyrazów (zakładamy, że spacja oddziela wyrazy w zdaniu)
 ## użyj odpowiednich metod dla zmiennych typu string np. split do rozdzielenia elementów: x = ‘blue,red,green’,   x.split(“,”)
 
-# def ZdanieRozdziel(txt):
-#     txt_list = txt.split('.')
-#     print(txt_list, ' text rozdzielony na zdania')
-#     print(int(txt.count(',')) + int(txt.count(';')) , 'w texcie jest tyle rozdzielaczy textu')
-#     print(txt.count(' '), ' W texcie jest tyle wyrazow')
+def ZdanieRozdziel(txt):
+    txt_list = txt.split('.')
+    print(txt_list, ' text rozdzielony na zdania')
+    print(int(txt.count(',')) + int(txt.count(';')) , 'w texcie jest tyle rozdzielaczy textu')
+    print(txt.count(' '), ' W texcie jest tyle wyrazow')
 
-# txt = input('Podaj text: ')
-# ZdanieRozdziel(txt)
+txt = input('Podaj text: ')
+ZdanieRozdziel(txt)
 
 ########### Zadanie 6  ########################
 ## Zdefiniuj funkcję "CiagGometryczny.py", która dla podanych trzech parametrów:
@@ -241,10 +241,10 @@ Dodatkowe linki do filmów, które ułatwią Ci zrozumienie materiału z laborat
 ## a) wartość n-tego elementu ciągu geometrycznego
 ## b) sumę elementów ciągu geometrycznego
 
-# def CiagGometryczny(n,a1,q):
-#     print('Wartosc ' + str(n) + ' elemntu ciagu wynosi: ' + str(a1*(q**(n-1))))
-#     print('suma wyrazow ciagu od 1 do ' + str(n) + ' wynosi ' + str(((a1 + (a1*(q**(n-1))))/2)*n))
-# CiagGometryczny(5,1,2)
+def CiagGometryczny(n,a1,q):
+    print('Wartosc ' + str(n) + ' elemntu ciagu wynosi: ' + str(a1*(q**(n-1))))
+    print('suma wyrazow ciagu od 1 do ' + str(n) + ' wynosi ' + str(((a1 + (a1*(q**(n-1))))/2)*n))
+CiagGometryczny(5,1,2)
     
 
 # ########################## Zadanie 7
@@ -256,7 +256,7 @@ Dodatkowe linki do filmów, które ułatwią Ci zrozumienie materiału z laborat
 # Pamiętaj że asortyment sprzedawanego towaru ulega zmianie
 # Użyj kwargs
 
-def obsluga_bazy_danych(**kwargs):
+def base(**kwargs):
     for towar, ilosc in kwargs.items():
         if towar in baza_danych:
             baza_danych[towar].append(ilosc)
@@ -265,13 +265,13 @@ def obsluga_bazy_danych(**kwargs):
 
 baza_danych = {}
 
-obsluga_bazy_danych(jablka=50, banany=30)
-obsluga_bazy_danych(marchewki=20, jablka=40)
-obsluga_bazy_danych(banan=20, pomarancze=35, marchewki=15)
+base(jablka=50, banany=30)
+base(marchewki=20, jablka=40)
+base(banan=20, pomarancze=35, marchewki=15)
 
 print("Zawartość bazy danych: ")
 for towar, ilosci in baza_danych.items():
-    print(f"{towar}: {ilosci}")
+    print(f'{towar}:{ilosci}')
 
 
 
@@ -287,12 +287,55 @@ for towar, ilosci in baza_danych.items():
 ## Użyj zmiennych globals, utwórz moduł globals.py w którym będą przechowywane 
 ## domyślne wartości dla boków prostokąta, trójkąta, kwadratu (równe 1)
 
+import globals
+from pole_prostokata import oblicz_pole_prostokata
+from pole_trojkata import oblicz_pole_trojkata
+
+def oblicz_pole(figura):
+    if figura == "prostokat":
+        a = globals.prostokat_bok_a
+        b = globals.prostokat_bok_b
+        return oblicz_pole_prostokata(a, b)
+    elif figura == "trojkat":
+        a = globals.trojkat_podstawa
+        h = globals.trojkat_wysokosc
+        return oblicz_pole_trojkata(a, h)
+    elif figura == "kwadrat":
+        a = globals.kwadrat_bok
+        return oblicz_pole_prostokata(a, a)
+    else:
+        return "Nieznana figura"
+
+
+print("Pole prostokata:", oblicz_pole("prostokat"))
+print("Pole trojkata:", oblicz_pole("trojkat"))
+print("Pole kwadratu:", oblicz_pole("kwadrat"))
 
 # ########################## Zadanie 9
 ## Zdefiniuj funkcję wyższego rzędu która ma możliwość obliczenia
 ## pole powierzchni prostokąta i pola powierzchni trójkąta
 ## Nie modyfikując zawartości w/w funkcji, użyj dekoratora i dodaj możliwość 
 ## obliczenia pola kwadratu
+
+def oblicz_pole(figura, **kwargs):
+    if figura == "prostokat":
+        a = kwargs['a']
+        b = kwargs['b']
+        return oblicz_pole_prostokata(a, b)
+    elif figura == "trojkat":
+        a = kwargs['a']
+        h = kwargs['h']
+        return oblicz_pole_trojkata(a, h)
+    elif figura == "kwadrat":
+        a = kwargs['a']
+        return oblicz_pole_prostokata(a, a)
+    else:
+        return "Nieznana figura"
+
+
+print("Pole prostokata:", oblicz_pole("prostokat", a=3, b=4))
+print("Pole trojkata:", oblicz_pole("trojkat", a=3, h=5))
+print("Pole kwadratu:", oblicz_pole("kwadrat", a=4))
 
 # ########################## Zadanie 10
 ## Utwórz funkcję która umożliwia logowanie na serwer
@@ -304,12 +347,43 @@ for towar, ilosci in baza_danych.items():
 ## wprowadzania dodatkowych innch pól użytkownikowi (wprowadzane jako słownik
 ##  np. {'data_base': 'https://pl.wikipedia.org'})
 
+def logowanie(user='edek2003', password='Wsx123'):
+    return "Logowanie uzytkownika " + user + " z uzyciem hasła " + password
+
+
+print(logowanie()) 
+print(logowanie('kuba', 'kuba')) 
+
+
+def dodaj_pola_host_port(func):
+    def add(**kwargs):
+        if 'host' in kwargs and 'port' in kwargs:
+            return func(**kwargs)
+        else:
+            kwargs['host'] = 'default_host'
+            kwargs['port'] = 8080
+            return func(**kwargs)
+    return add
+
+
+
+def logowanie(user='edek2003', password='Wsx123', **kwargs):
+    return f"Logowanie uzytkownika " + user + " na serwer host: " + str(kwargs['host']) + " i porcie: " + str(kwargs['port']) + " z użyciem hasła " + password
+
+print(logowanie(user='janek', password='secret', host=123123, port=1234))
+
 # ########################## Zadanie 11
 ## Zdefiniuj funkcję ciag_gometryczny, która dla podanych trzech parametrów:
 ## n=numer elementu ciągu, a1=wartość pierwszego elementu ciągu (domyślnie: 1),
 ## q=wartość iloczynu ciągu geometrycznego (domyślnie: 2) 
 ## zwróci w zależności od ustawianych parametrów funkcji
 ## a) wartość n-tego elementu ciągu geometrycznego
+
+
+def CiagGometryczny(n,a1,q):
+    print('Wartosc ' + str(n) + ' elemntu ciagu wynosi: ' + str(a1*(q**(n-1))))
+    print('suma wyrazow ciagu od 1 do ' + str(n) + ' wynosi ' + str(((a1 + (a1*(q**(n-1))))/2)*n))
+CiagGometryczny(5,1,2)
 
 ## Następnie korzystając z dekoratora udoskonal swoją funkcję,
 ## dodaj możliwość obliczenia sumy elementów ciągu geometrycznego

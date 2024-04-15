@@ -248,14 +248,14 @@ def zmien_katalog(sciezka):
 ## program działa tylko wówczas gdy użytkownik odpowie "yes" na pytanie:
 ## "Czy mam zmienić katalog?", zastosuj pętle while True(zmuś użytkownika :) do wpisania "yes")
 
-# sciezka = input('Podaj sciezke')
-# while True:
-#     answ = input('czy napewno zmienic sciezke')
-#     if(answ.lower() == 'yes'):
-#         zmien_katalog(sciezka)
-#         break
-#     else:
-#         print('musisz wpisac yes zeby zmienic sciezke')
+sciezka = input('Podaj sciezke')
+while True:
+    answ = input('czy napewno zmienic sciezke')
+    if(answ.lower() == 'yes'):
+        zmien_katalog(sciezka)
+        break
+    else:
+        print('musisz wpisac yes zeby zmienic sciezke')
 
 
 
@@ -266,19 +266,19 @@ def zmien_katalog(sciezka):
 ## a) korzystając z instrukcji Pythona wyświetl wszystkie pliki znajdujące się folderze roboczym
 ## b) korzystając z metod Pythona i (pętli lub funkcji filter) wyświetl tylko pliki z rozszerzeniem *.doc znajdujące się folderze roboczym
 
-# os.makedirs("Dokument", exist_ok=True)
-# os.chdir('Dokument')
-# not os.path.exists("lab1.doc") and open("lab1.doc", "w")
-# not os.path.exists("lab2.doc") and open("lab2.doc", "w")
-# not os.path.exists("lab3.doc") and open("lab3.doc", "w")
-# os.listdir('.')
+os.makedirs("Dokument", exist_ok=True)
+os.chdir('Dokument')
+not os.path.exists("lab1.doc") and open("lab1.doc", "w")
+not os.path.exists("lab2.doc") and open("lab2.doc", "w")
+not os.path.exists("lab3.doc") and open("lab3.doc", "w")
+os.listdir('.')
 
-# def doc(file):
-#     return ".doc" in file
-# files_doc = filter(doc, os.listdir('.'))
-# print(files_doc)
-# for plik in files_doc:
-#     print(plik)
+def doc(file):
+    return ".doc" in file
+files_doc = filter(doc, os.listdir('.'))
+print(files_doc)
+for plik in files_doc:
+    print(plik)
 
 ########################## Zadanie 4 #######################
 ## Korzystając wyłącznie z metod Pythona, utworz w swoim folderze 2 katalogi:
@@ -286,22 +286,22 @@ def zmien_katalog(sciezka):
 ## pliki odpowiednio tekstowe i graficzne, a następnie wyświetl zawartość poszczególnych
 ## folderów podaj rozmiar każdego pliku
 
-# os.makedirs('StudentDoc', exist_ok=True)
-# os.makedirs('StudentObrazy', exist_ok=True)
-# open("StudentDoc/plik1.txt", "w")
-# open("StudentDoc/plik2.txt", "w")
+os.makedirs('StudentDoc', exist_ok=True)
+os.makedirs('StudentObrazy', exist_ok=True)
+open("StudentDoc/plik1.txt", "w")
+open("StudentDoc/plik2.txt", "w")
 
-# open("StudentObrazy/plik1.jpg", "w")
-# open("StudentObrazy/plik2.jpg", "w")
+open("StudentObrazy/plik1.jpg", "w")
+open("StudentObrazy/plik2.jpg", "w")
 
-# folder = 'StudentDoc'
-# filess = os.listdir(folder)
+folder = 'StudentDoc'
+filess = os.listdir(folder)
 
-# for plik in filess:
-#     sciezka = os.path.join(folder, plik)
-#     if os.path.isfile(sciezka):
-#         rozmiar = os.path.getsize(sciezka)
-#         print(f"Nazwa pliku: {plik}, Rozmiar: {rozmiar} bajtów")
+for plik in filess:
+    sciezka = os.path.join(folder, plik)
+    if os.path.isfile(sciezka):
+        rozmiar = os.path.getsize(sciezka)
+        print(f"Nazwa pliku: {plik}, Rozmiar: {rozmiar} bajtów")
 
 
 ########################## Zadanie 5 #######################
@@ -318,10 +318,48 @@ print(os.listdir())
 ########################## Zadanie 6 ########################
 # # Utwórz trzy listy, zapisz, usuń a następnie odczytaj z pliku listy, użyj pickle
 
+import pickle
+list1 = [1, 2, 3, 4, 5]
+list2 = ['a', 'b', 'c', 'd', 'e']
+list3 = ['asfasf', 'gasgasg', 'vzxvxz']
+
+with open('listy.pickle', 'wb') as file:
+    pickle.dump(list1, file)
+    pickle.dump(list2, file)
+    pickle.dump(list3, file)
+
+del list1
+del list2
+del list3
+
+
+with open('listy.pickle', 'rb') as file:
+    lista1 = pickle.load(file)
+    lista2 = pickle.load(file)
+    lista3 = pickle.load(file)
+
+print("Lista 1:", lista1)
+print("Lista 2:", lista2)
+print("Lista 3:", lista3)
+
+
 ########################## Zadanie 7 ########################
 ## Zapisz do pliku liczbę 123456789, spakuj, rozpakuj dane
 ## Sprawdź w dokumentacji pakietu struct typ danej
 ## https://docs.python.org/3/library/struct.html
+
+import struct
+
+number = 123456789
+file = open('liczba.bin', 'wb')
+file.write(struct.pack('i', number))
+file.close()
+
+file = open('liczba.bin', 'rb')
+numberf = struct.unpack('i', file.read())
+file.close()
+
+print("Odczytana liczba:", numberf[0])
 
 ########################## Zadanie 9 #########################
 ## Utwórz i zapisz do folderu 5 dowolnych plików tekstowych z dowolnym tekstem
@@ -338,3 +376,36 @@ print(os.listdir())
 ##    wyznaczy liczbę słów
 ## c) dla plików zakończonych ciągiem znaków 'ABC' wyznacz liczbę wyrazów złożonych z conajmnie 3 liter.
 
+import os
+
+folder_path = 'teksty'
+if not os.path.exists(folder_path):
+    os.makedirs(folder_path)
+
+
+tekst1 = "Python wspiera różne paradygmaty programowania: obiektowy, imperatywny oraz w mniejszym stopniu funkcyjny. Posiada w pełni dynamiczny system typów i automatyczne zarządzanie pamięcią, będąc w tym podobnym do języków Perl, Ruby, Scheme czy Tcl. Podobnie jak inne języki dynamiczne jest często używany jako język skryptowy. Interpretery Pythona są dostępne na wiele systemów operacyjnych."
+tekst2 = "Python rozwijany jest jako projekt Open Source zarządzany przez Python Software Foundation, która jest organizacją non-profit. Standardową implementacją języka jest CPython (napisany w C), ale istnieją też inne, np. Jython (napisany w Javie), CLPython napisany w Common Lisp, IronPython (na platformę .NET) i PyPy (napisany w Pythonie, zob. bootstrap)."
+tekst3 = "Pythona stworzył we wczesnych latach 90. Guido van Rossum  jako następcę języka ABC, stworzonego w Centrum voor Wiskunde en Informatica[w innych językach] (CWI  Centrum Matematyki i Informatyki w Amsterdamie). Van Rossum jest głównym twórcą Pythona, choć spory wkład w jego rozwój pochodzi od innych osób. Z racji kluczowej roli, jaką van Rossum pełnił przy podejmowaniu ważnych decyzji projektowych, często określano go przydomkiem „Benevolent Dictator for Life” (BDFL)."
+tekst4 = "Nazwa języka nie pochodzi od zwierzęcia, lecz od serialu komediowego emitowanego w latach siedemdziesiątych przez BBC  „Monty Pythons Flying Circus” (Latający cyrk Monty Pythona). Projektant, będąc fanem serialu i poszukując nazwy krótkiej, unikalnej i nieco tajemniczej, uznał tę za świetną[6]."
+tekst5 = "Wersja 1.2 była ostatnią wydaną przez CWI. Od 1995 roku Van Rossum kontynuował pracę nad Pythonem w Corporation for National Research Initiatives (CNRI) w Reston w Wirginii, gdzie wydał kilka wersji Pythona, do 1.6 włącznie. W 2000 roku van Rossum i zespół pracujący nad rozwojem jądra Pythona przenieśli się do BeOpen.com, by założyć zespół BeOpen PythonLabs. Pierwszą i jedyną wersją wydaną przez BeOpen.com był Python 2.0."
+
+
+for i, tekst in enumerate([tekst1, tekst2, tekst3, tekst4, tekst5], start=1):
+    with open(os.path.join(folder_path, f"Tekst{i}ID_ABC.txt"), 'w') as file:
+        file.write(tekst)
+
+def odczytaj_nazwy_plikow(folder):
+    return os.listdir(folder)
+
+nazwy_plikow = odczytaj_nazwy_plikow(folder_path)
+print("Nazwy wszystkich plików w folderze:", nazwy_plikow)
+
+def liczba_wyrazow_ABC(folder):
+    return sum(
+        len(slowo) >= 3
+        for nazwa_pliku in os.listdir(folder)
+        if nazwa_pliku.endswith('ABC.txt')
+        for slowo in open(os.path.join(folder, nazwa_pliku)).read().split()
+    )
+
+print("Liczba wyrazów ABC w plikach zakończonych ciągiem znaków 'ABC':", liczba_wyrazow_ABC(folder_path))

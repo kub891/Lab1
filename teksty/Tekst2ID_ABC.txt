@@ -1,0 +1,1 @@
+Python rozwijany jest jako projekt Open Source zarz¹dzany przez Python Software Foundation, która jest organizacj¹ non-profit. Standardow¹ implementacj¹ jêzyka jest CPython (napisany w C), ale istniej¹ te¿ inne, np. Jython (napisany w Javie), CLPython napisany w Common Lisp, IronPython (na platformê .NET) i PyPy (napisany w Pythonie, zob. bootstrap).

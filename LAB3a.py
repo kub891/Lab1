@@ -298,8 +298,8 @@ print(data) if passw.count(ipassw) > 0 else print('zle haslo')
 # Write a function that calculates the quotient of 3 even numbers
 # Utwórz funkcje która obliczy iloraz 3 parzystych liczb, użyj "one line statement"
 
-
-
+iloraz = lambda a, b, c: a * b * c / 3 if(a%2==0 and b%2==0 and c%2 == 0) else None
+print(iloraz(2,4,6))
 ########################## Task 6
 # Utwórz listę złożoną z pojedynczych liter swojego imienia następnie korzystając
 # z funkcji lambda połącz kolejne litery w jeden wyraz (swoje imie)
